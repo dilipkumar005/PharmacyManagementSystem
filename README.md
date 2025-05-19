@@ -33,10 +33,10 @@ The system uses a MySQL database named `pharmacy` with the following main tables
 - `bill`: Stores billing information including bill ID, date, total paid, and the user who generated the bill.
 
 ## Setup Instructions
-1. Install Java SE Development Kit (JDK) 8 or higher.
+1. Install Java SE Development Kit (JDK) 17 or higher.
 2. Install MySQL Server and create a database named `pharmacy`.
 3. Execute the SQL scripts or use the application to create the necessary tables (`appuser`, `medicine`, `bill`).
-4. Update the database connection credentials in `dao/ConnectionProvider.java` if necessary (default is `root` user with password `dilip`).
+4. Update the database connection credentials in `dao/ConnectionProvider.java` if necessary (default is `root` user with password ``).
 5. Import the project into an IDE such as NetBeans or Eclipse.
 6. Build and run the project. The application starts with the Login screen.
 
@@ -48,4 +48,4 @@ The system uses a MySQL database named `pharmacy` with the following main tables
 - Use the Exit button to close the application.
 
 ## Author
-Developed by Lucky.
+Developed by Dilip.
