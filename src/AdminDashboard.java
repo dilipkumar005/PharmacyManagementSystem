@@ -140,8 +140,10 @@ public class AdminDashboard extends javax.swing.JFrame {
 
     private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
         // TODO add your handling code here:
-        int a = JOptionPane.showConfirmDialog(null, "Do you want to Close Application","Select",JOptionPane.YES_NO_OPTION);
-        System.exit(0);        
+        int a = JOptionPane.showConfirmDialog(null, "Do you want to Close Application","Select",JOptionPane.YES_NO_CANCEL_OPTION);
+        if (a == JOptionPane.YES_OPTION) {
+        System.exit(0);
+        }        
     }//GEN-LAST:event_jButton6ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
