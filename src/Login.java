@@ -56,9 +56,7 @@ public class Login extends javax.swing.JFrame {
         jLabel2.setText("Username");
         getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 320, -1, -1));
 
-        txtUsername.setBackground(new java.awt.Color(255, 255, 255));
         txtUsername.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        txtUsername.setForeground(new java.awt.Color(0, 0, 0));
         getContentPane().add(txtUsername, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 320, 300, -1));
 
         jLabel3.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
@@ -66,14 +64,10 @@ public class Login extends javax.swing.JFrame {
         jLabel3.setText("Password");
         getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 360, -1, -1));
 
-        txtPassword.setBackground(new java.awt.Color(255, 255, 255));
         txtPassword.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        txtPassword.setForeground(new java.awt.Color(0, 0, 0));
         getContentPane().add(txtPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 360, 300, -1));
 
-        jButton1.setBackground(new java.awt.Color(255, 255, 255));
-        jButton1.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        jButton1.setForeground(new java.awt.Color(0, 0, 0));
+        jButton1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/login.png"))); // NOI18N
         jButton1.setText("Login");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -81,7 +75,7 @@ public class Login extends javax.swing.JFrame {
                 jButton1ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 410, -1, -1));
+        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 410, 160, 40));
 
         jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/close.png"))); // NOI18N
         jButton2.addActionListener(new java.awt.event.ActionListener() {
@@ -91,7 +85,6 @@ public class Login extends javax.swing.JFrame {
         });
         getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(1300, 20, -1, -1));
 
-        jLabel4.setForeground(new java.awt.Color(0, 0, 0));
         jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/login_background.PNG"))); // NOI18N
         jLabel4.setText("jLabel4");
         getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
@@ -106,29 +99,37 @@ public class Login extends javax.swing.JFrame {
         
         int temp = 0;
         
-        try{
-        Connection con = ConnectionProvider.getCon();
-        Statement st = con.createStatement();
-        ResultSet rs = st.executeQuery("select *from appuser where username='"+username+"' and password='"+password+"'");
-        while(rs.next()){
-            temp = 1;
-            if(rs.getString("userRole").equals("Admin")){
-                setVisible(false);
-                new AdminDashboard(username).setVisible(true);
+
+        try {
+            Connection con = ConnectionProvider.getCon();
+            Statement st = con.createStatement();
+            ResultSet rs = st.executeQuery("select * from appuser where username='" + username + "' and password='" + password + "'");
+
+            while (rs.next()) {
+                temp = 1;
+                String role = rs.getString("userRole");
+
+                setVisible(false);  // Hide login window
+
+                if ("Admin".equalsIgnoreCase(role)) {
+                    new AdminDashboard(username).setVisible(true);
+                } else if ("Pharmacist".equalsIgnoreCase(role)) {
+                    new PharmacistDashboard(username).setVisible(true);
+                } else if ("Customer".equalsIgnoreCase(role)) {
+                    new CustomerDashboard(username).setVisible(true);
+                } else {
+                    JOptionPane.showMessageDialog(null, "Unrecognized user role: " + role);
+                    setVisible(true);  // Show login window again if role is unknown
+                }
             }
-            else{
-                setVisible(false);
-                new PharmacistDashboard(username).setVisible(true);
+
+            if (temp == 0) {
+                JOptionPane.showMessageDialog(null, "Incorrect Username or Password");
             }
-        }
-        
-        if(temp == 0){
-            JOptionPane.showMessageDialog(null, "Incorrect Username or Password");
-        }
-        }
-        catch(Exception e){
+        } catch (Exception e) {
             JOptionPane.showMessageDialog(null, e);
         }
+
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed

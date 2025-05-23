@@ -66,51 +66,39 @@ public class AddUser extends javax.swing.JFrame {
         setUndecorated(true);
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(0, 0, 0));
         jLabel1.setText("Add User");
 
         jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(0, 0, 0));
         jLabel2.setText("User Role");
 
         comboUserRole.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        comboUserRole.setForeground(new java.awt.Color(0, 0, 0));
-        comboUserRole.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Admin", "Pharmacist" }));
+        comboUserRole.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Admin", "Pharmacist", "Customer" }));
 
         jLabel3.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(0, 0, 0));
         jLabel3.setText("Name");
 
         txtName.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        txtName.setForeground(new java.awt.Color(0, 0, 0));
 
         jLabel4.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        jLabel4.setForeground(new java.awt.Color(0, 0, 0));
         jLabel4.setText("DOB (Date Of Birth)");
 
         dateDOB.setFocusable(false);
         dateDOB.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
 
         jLabel5.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        jLabel5.setForeground(new java.awt.Color(0, 0, 0));
         jLabel5.setText("Mobile Number");
 
         txtMobileNumber.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        txtMobileNumber.setForeground(new java.awt.Color(0, 0, 0));
 
         jLabel6.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        jLabel6.setForeground(new java.awt.Color(0, 0, 0));
         jLabel6.setText("Email");
 
         txtEmail.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        txtEmail.setForeground(new java.awt.Color(0, 0, 0));
 
         jLabel7.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        jLabel7.setForeground(new java.awt.Color(0, 0, 0));
         jLabel7.setText("Username");
 
         txtUsername.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        txtUsername.setForeground(new java.awt.Color(0, 0, 0));
         txtUsername.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 txtUsernameKeyReleased(evt);
@@ -120,18 +108,14 @@ public class AddUser extends javax.swing.JFrame {
         iconLabel.setText("jLabel8");
 
         jLabel9.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        jLabel9.setForeground(new java.awt.Color(0, 0, 0));
         jLabel9.setText("Password");
 
         txtPassword.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        txtPassword.setForeground(new java.awt.Color(0, 0, 0));
 
         jLabel10.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        jLabel10.setForeground(new java.awt.Color(0, 0, 0));
         jLabel10.setText("Address");
 
         txtAddress.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        txtAddress.setForeground(new java.awt.Color(0, 0, 0));
 
         jButton1.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/save.png"))); // NOI18N

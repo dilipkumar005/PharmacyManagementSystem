@@ -61,7 +61,6 @@ public class UpdateUser extends javax.swing.JFrame {
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(0, 0, 0));
         jLabel1.setText("Update User");
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 6, -1, -1));
 
@@ -75,13 +74,11 @@ public class UpdateUser extends javax.swing.JFrame {
         getContentPane().add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 60, 850, 10));
 
         jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(0, 0, 0));
         jLabel2.setText("Username");
         getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(177, 93, -1, -1));
         getContentPane().add(txtUsername, new org.netbeans.lib.awtextra.AbsoluteConstraints(252, 90, 300, -1));
 
         jButton2.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        jButton2.setForeground(new java.awt.Color(0, 0, 0));
         jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/search.png"))); // NOI18N
         jButton2.setText("Search");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
@@ -92,62 +89,49 @@ public class UpdateUser extends javax.swing.JFrame {
         getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 88, -1, -1));
 
         jLabel3.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(0, 0, 0));
         jLabel3.setText("User Role");
         getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(57, 178, -1, -1));
 
         comboUserRole.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        comboUserRole.setForeground(new java.awt.Color(0, 0, 0));
         comboUserRole.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Admin", "Pharmacist" }));
         getContentPane().add(comboUserRole, new org.netbeans.lib.awtextra.AbsoluteConstraints(57, 212, 300, -1));
 
         jLabel4.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        jLabel4.setForeground(new java.awt.Color(0, 0, 0));
         jLabel4.setText("Name");
         getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(57, 252, -1, -1));
 
         txtName.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        txtName.setForeground(new java.awt.Color(0, 0, 0));
         getContentPane().add(txtName, new org.netbeans.lib.awtextra.AbsoluteConstraints(57, 286, 300, -1));
 
         jLabel5.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        jLabel5.setForeground(new java.awt.Color(0, 0, 0));
         jLabel5.setText("DOB (Date of Birth)");
         getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(57, 326, -1, -1));
 
-        dateDOB.setForeground(new java.awt.Color(0, 0, 0));
         dateDOB.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         getContentPane().add(dateDOB, new org.netbeans.lib.awtextra.AbsoluteConstraints(57, 360, 300, -1));
 
         jLabel6.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        jLabel6.setForeground(new java.awt.Color(0, 0, 0));
         jLabel6.setText("Email");
         getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(465, 178, -1, -1));
 
         txtEmail.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        txtEmail.setForeground(new java.awt.Color(0, 0, 0));
         getContentPane().add(txtEmail, new org.netbeans.lib.awtextra.AbsoluteConstraints(465, 212, 300, -1));
 
         jLabel7.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        jLabel7.setForeground(new java.awt.Color(0, 0, 0));
         jLabel7.setText("Mobile Number");
         getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(465, 252, -1, -1));
 
         txtMobileNumber.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        txtMobileNumber.setForeground(new java.awt.Color(0, 0, 0));
         getContentPane().add(txtMobileNumber, new org.netbeans.lib.awtextra.AbsoluteConstraints(465, 286, 300, -1));
 
         jLabel8.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        jLabel8.setForeground(new java.awt.Color(0, 0, 0));
         jLabel8.setText("Address");
         getContentPane().add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(465, 326, -1, -1));
 
         txtAddress.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        txtAddress.setForeground(new java.awt.Color(0, 0, 0));
         getContentPane().add(txtAddress, new org.netbeans.lib.awtextra.AbsoluteConstraints(465, 360, 300, -1));
 
         jButton3.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        jButton3.setForeground(new java.awt.Color(0, 0, 0));
         jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/save.png"))); // NOI18N
         jButton3.setText("Update");
         jButton3.addActionListener(new java.awt.event.ActionListener() {
