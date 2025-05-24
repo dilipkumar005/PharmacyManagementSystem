@@ -14,7 +14,7 @@ public class ConnectionProvider {
     public static Connection getCon(){
         try{
         Class.forName("com.mysql.jdbc.Driver");
-        Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/pharmacy?useSSl=false","root","dilip");
+        Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/pharmacy?useSSl=false","root","");
         return con;
         }
         catch(Exception e){

@@ -17,10 +17,20 @@ import javax.swing.table.TableModel;
  */
 public class ViewBill extends javax.swing.JFrame {
 
+    private String role;
+    private String username;
+
     /**
      * Creates new form ViewBill
      */
     public ViewBill() {
+        initComponents();
+        setLocationRelativeTo(null);
+    }
+
+    public ViewBill(String role, String username) {
+        this.role = role;
+        this.username = username;
         initComponents();
         setLocationRelativeTo(null);
     }
@@ -122,23 +132,52 @@ public class ViewBill extends javax.swing.JFrame {
 
     private void formComponentShown(java.awt.event.ComponentEvent evt) {//GEN-FIRST:event_formComponentShown
         // TODO add your handling code here:
+//        DefaultTableModel model = (DefaultTableModel) jTable1.getModel();
+//        try{
+//            Connection con = ConnectionProvider.getCon();
+//            Statement st = con.createStatement();
+//            ResultSet rs = st.executeQuery("select * from bill");
+//            while(rs.next()){
+//                model.addRow(new Object[] {
+//                    rs.getString("billId"),
+//                    rs.getString("billDate"),
+//                    rs.getString("totalPaid"),
+//                    rs.getString("generatedBy")
+//                });
+//            }
+//            
+//        }catch(Exception e){
+//            JOptionPane.showMessageDialog(null, e);
+//        }
+
         DefaultTableModel model = (DefaultTableModel) jTable1.getModel();
-        try{
-            Connection con = ConnectionProvider.getCon();
-            Statement st = con.createStatement();
-            ResultSet rs = st.executeQuery("select * from bill");
-            while(rs.next()){
-                model.addRow(new Object[] {
-                    rs.getString("billId"),
-                    rs.getString("billDate"),
-                    rs.getString("totalPaid"),
-                    rs.getString("generatedBy")
-                });
-            }
-            
-        }catch(Exception e){
-            JOptionPane.showMessageDialog(null, e);
+    try {
+        Connection con = ConnectionProvider.getCon();
+        PreparedStatement ps;
+
+        if ("Pharmacist".equalsIgnoreCase(role)) {
+            ps = con.prepareStatement("SELECT * FROM bill");
+        } else if ("Customer".equalsIgnoreCase(role)) {
+            ps = con.prepareStatement("SELECT * FROM bill WHERE generatedBy = ?");
+            ps.setString(1, username);
+        } else {
+            JOptionPane.showMessageDialog(null, "Access Denied: Invalid Role");
+            return;
         }
+
+        ResultSet rs = ps.executeQuery();
+        while (rs.next()) {
+            model.addRow(new Object[] {
+                rs.getString("billId"),
+                rs.getString("billDate"),
+                rs.getString("totalPaid"),
+                rs.getString("generatedBy")
+            });
+        }
+
+    } catch (Exception e) {
+        JOptionPane.showMessageDialog(null, e);
+    }
     }//GEN-LAST:event_formComponentShown
 
     private void jTable1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTable1MouseClicked
